@@ -40,7 +40,7 @@ deploy-prod:
   tags:
     - prod
   only:
-    - main
+    - master
   when: manual
   script:
     - docker stack deploy --with-registry-auth -c ./.deploy/deploy-prod.yaml github-auth
