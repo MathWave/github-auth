@@ -24,6 +24,9 @@ services:
       MONGO_HOST: "mongo.sprinthub.ru"
       MONGO_PASSWORD: $MONGO_PASSWORD_PROD
       ORIGIN: "https://github-auth.sprinthub.ru/"
+      SECRET_KEY: $SECRET_KEY
+      GITHUB_CLIENT_SECRET: $GITHUB_CLIENT_SECRET
+      APP_CLIENT_SECRET: $APP_CLIENT_SECRET
     deploy:
       mode: replicated
       restart_policy:
