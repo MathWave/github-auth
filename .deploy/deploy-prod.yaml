@@ -1,0 +1,37 @@
+version: "3.4"
+
+
+services:
+
+  github-auth-nginx:
+    image: mathwave/sprint-repo:github-auth-nginx
+    networks:
+      - net
+      - common-infra-nginx
+    deploy:
+      mode: replicated
+      restart_policy:
+        condition: any
+      update_config:
+        parallelism: 1
+        order: start-first
+
+  app:
+    image: mathwave/sprint-repo:github-auth
+    networks:
+      - net
+    environment:
+      MONGO_HOST: "mongo.sprinthub.ru"
+      MONGO_PASSWORD: $MONGO_PASSWORD_PROD
+      ORIGIN: "https://github-auth.sprinthub.ru/"
+    deploy:
+      mode: replicated
+      restart_policy:
+        condition: any
+      update_config:
+        parallelism: 1
+        order: start-first
+
+networks:
+  common-infra-nginx:
+    external: true
