@@ -23,7 +23,7 @@ services:
     environment:
       MONGO_HOST: "mongo.develop.sprinthub.ru"
       MONGO_PASSWORD: $MONGO_PASSWORD_DEV
-      ORIGIN: "https://github-auth.develop.sprinthub.ru/"
+      ORIGIN: "http://github-auth.develop.sprinthub.ru/"
       SECRET_KEY: $SECRET_KEY
       GITHUB_CLIENT_SECRET: $GITHUB_CLIENT_SECRET
       APP_CLIENT_SECRET: $APP_CLIENT_SECRET

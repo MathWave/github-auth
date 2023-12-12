@@ -1,11 +1,7 @@
-import uuid
-
-from flask import render_template, request, abort
+from flask import request, abort
 from flask_appbuilder import BaseView, expose
 
-from app import appbuilder
 from app.models import InternalUser
-from app.utils import hash_password
 
 
 class GetUserView(BaseView):

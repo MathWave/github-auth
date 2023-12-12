@@ -1,5 +1,3 @@
-import uuid
-
 from flask import render_template, request, redirect
 from flask_appbuilder import BaseView, expose
 
